@@ -1,7 +1,6 @@
 import numpy as np
 import torch
 import torchcde
-from torch.utils.data import Dataset
 
 
 def simulate_ou_process(T, len_trajectory, mu, sigma, theta, X_0):
@@ -14,7 +13,7 @@ def simulate_ou_process(T, len_trajectory, mu, sigma, theta, X_0):
         dB = np.random.normal(0, np.sqrt(dt))
         drift = mu - X[i-1]
         diffusion = sigma
-        X[i] = X[i-1] + theta * drift * dt + sigma * diffusion * dB
+        X[i] = X[i-1] + theta * drift * dt + diffusion * dB
     return t, X
 
 
@@ -26,9 +25,7 @@ def create_ou_dataset(n_samples, T, len_trajectory, mu, sigma, theta, X_0):
         data[i,1,:] = X
     
     data = torch.Tensor(data).permute(0,2,1)
-
     norm_T = torch.linspace(0,1,len_trajectory)
     spline_coeffs = torchcde.hermite_cubic_coefficients_with_backward_differences(data, norm_T)
 
     return data, spline_coeffs, norm_T
-

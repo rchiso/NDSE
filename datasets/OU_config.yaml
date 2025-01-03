@@ -1,0 +1,9 @@
+n_samples: 1000
+T: 10.0
+len_trajectory: 20
+theta: 0.2
+mu: 0.0
+sigma: 0.1
+X_0: 1.0
+train_ratio: 0.8
+batch_size: 16
