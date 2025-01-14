@@ -28,4 +28,4 @@ def create_ou_dataset(n_samples, T, len_trajectory, mu, sigma, theta, X_0):
     norm_T = torch.linspace(0,1,len_trajectory)
     spline_coeffs = torchcde.hermite_cubic_coefficients_with_backward_differences(data, norm_T)
 
-    return data, spline_coeffs, norm_T
+    return data, spline_coeffs
