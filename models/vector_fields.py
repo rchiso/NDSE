@@ -1,3 +1,6 @@
+# All credits to Oh, Y., Lim, D., & Kim, S. (2024). Stable Neural Stochastic Differential Equations in Analyzing Irregular Time Series Data. arXiv preprint arXiv:2402.14989.
+
+
 import torch
 import torch.nn as nn
 import torchcde

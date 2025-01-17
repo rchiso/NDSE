@@ -1,6 +1,6 @@
 import torch
 import matplotlib.pyplot as plt
-
+from matplotlib.lines import Line2D
 
 def plot_predictions(epoch, test_loader, model, criterion, fig_path, device):
     """Plot the model predictions
@@ -36,16 +36,24 @@ def plot_predictions(epoch, test_loader, model, criterion, fig_path, device):
     all_preds = torch.cat(all_preds, dim=0)
     all_trues = torch.cat(all_trues, dim=0)
 
-
-
     num_samples = 5      
     plt.figure(figsize=(8, 4))
+
+    # Plot all samples without labels
     for i in range(num_samples):
         plt.plot(all_trues[i].numpy(), color='r')
         plt.plot(all_preds[i].numpy(), color='b')
+
+    # Add a custom legend
+    legend_elements = [
+        Line2D([0], [0], color='r', label='True'),
+        Line2D([0], [0], color='b', label='Predicted')
+    ]
+    plt.legend(handles=legend_elements)
+
     plt.xlabel('Time')
     plt.ylabel('Value')
-    plt.ylim(-0.75,1.25)
-    plt.title('Model Predictions vs True Values')
+    plt.ylim(-0.75, 1.25)
+    plt.title(f'Model Predictions vs True Values (Epoch: {epoch})')
     plt.savefig(fig_path + f'Epoch={epoch}.png')
 

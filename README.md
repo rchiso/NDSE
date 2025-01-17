@@ -7,7 +7,23 @@ Implemented from
 - Xuanqing Liu, Tesi Xiao, Si Si, Qin Cao, Sanjiv Kumar, and Cho-Jui Hsieh. Neural sde: Stabilizing neural ode
 networks with stochastic noise. arXiv preprint arXiv:1906.02355, 2019.
 
-To run code, navigate to the project directory and run main.py
+## Running the code
+
+- Clone the repo and navigate to the project directory
+- For conda users, create and activate a conda environment
+```bash
+conda env create --name envname --file=environment.yml
+```
+- For pip users, install requirements directly
+```bash
+pip install requirements.txt
+```
+- Run the script
+```bash
+python main.py
+```
+
+## Additional Information
 
 - Model configs stored in /model_config.yaml
 - OU path configs stored in /datasets/OU_config.yaml
