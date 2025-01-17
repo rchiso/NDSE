@@ -12,7 +12,8 @@ networks with stochastic noise. arXiv preprint arXiv:1906.02355, 2019.
 - Clone the repo and navigate to the project directory
 - For conda users, create and activate a conda environment
   ```bash
-  conda env create --name envname --file=environment.yml
+  conda env create -f environment.yml
+  conda activate NSDE_Env
   ```
 - For pip users, install requirements directly (or by using pyenv first)
   ```bash
