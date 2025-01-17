@@ -11,20 +11,20 @@ networks with stochastic noise. arXiv preprint arXiv:1906.02355, 2019.
 
 - Clone the repo and navigate to the project directory
 - For conda users, create and activate a conda environment
-```bash
-conda env create --name envname --file=environment.yml
-```
-- For pip users, install requirements directly
-```bash
-pip install requirements.txt
-```
+  ```bash
+  conda env create --name envname --file=environment.yml
+  ```
+- For pip users, install requirements directly (or by using pyenv first)
+  ```bash
+  pip install requirements.txt
+  ```
 - Run the script
-```bash
-python main.py
-```
+  ```bash
+  python main.py
+  ```
 
 ## Additional Information
 
 - Model configs stored in /model_config.yaml
 - OU path configs stored in /datasets/OU_config.yaml
-- Plots are store in /plots/
+- Plots are stored in /plots/
