@@ -6,6 +6,8 @@ import yaml
 
 
 class Custom_Dataset(Dataset):
+    """Torch template for custom datasets
+    """
     def __init__(self, data, coeffs):
         self.data = data
         self.coeffs = coeffs
@@ -18,6 +20,15 @@ class Custom_Dataset(Dataset):
     
 
 def OU(file='./datasets/OU_config.yaml'):
+    """Generate data loaders for OU dataset
+
+    Args:
+        file (str, optional): Path to the OU config file. Defaults to './datasets/OU_config.yaml'.
+
+    Returns:
+        torch.utils.data.DataLoader: Training set data loader
+        torch.utils.data.DataLoader: Test set data loader
+    """
     with open(file) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 

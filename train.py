@@ -9,6 +9,13 @@ import matplotlib.pyplot as plt
 
 
 def train_model(config_file, fig_path, device):
+    """Train a NDE model
+
+    Args:
+        config_file (str): Path to the model config file
+        fig_path (str): Path to the directory to store plots
+        device (str): Backend to be used
+    """
     with open(config_file) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
     

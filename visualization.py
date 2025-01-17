@@ -3,6 +3,16 @@ import matplotlib.pyplot as plt
 
 
 def plot_predictions(epoch, test_loader, model, criterion, fig_path, device):
+    """Plot the model predictions
+
+    Args:
+        epoch (int): Current epoch on the model training
+        test_loader (torch.utils.data.DataLoader): Test set data loader
+        model (NDE_model): Trained NDE model
+        criterion (torch.nn.MSELoss): Loss function
+        fig_path (str): Path to the directory to store plots
+        device (str): Backend to be used
+    """
     model.eval()
     total_loss = 0
     all_preds = []

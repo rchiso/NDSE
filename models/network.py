@@ -1,7 +1,17 @@
 import torch.nn as nn
 
 class MLP(nn.Module):
-    def __init__(self, in_size, out_size, hidden_dim, num_layers):
+    """Class implementing a simple fully connected MLP
+    """
+    def __init__(self, in_size, hidden_dim, out_size, num_layers):
+        """Initializing the MLP
+
+        Args:
+            in_size (int): Size of the input layer
+            hidden_dim (int): Size of the hidden layers
+            out_size (int): Size of the output layer
+            num_layers (int): Number of hidden layers
+        """
         super().__init__()
         activation_fn = nn.ReLU()
 
@@ -13,5 +23,13 @@ class MLP(nn.Module):
         self._model = nn.Sequential(*model)
 
     def forward(self, x):
+        """Feed data into the network to get corresponding output
+
+        Args:
+            x (torch.Tensor): Input data, typically in a mini-batch 
+
+        Returns:
+            torch.Tensor: Output
+        """
         return self._model(x)
 
