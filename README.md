@@ -1,4 +1,4 @@
-# NDSE
+# NSDE
 
 Code for Neural Stochastic Differential Equation. Implements SDEs with multiplicative and additive noise, on OU path dataset
 
