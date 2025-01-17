@@ -1,4 +1,4 @@
-name: main
+name: NSDE_Env
 channels:
   - conda-forge
   - defaults
